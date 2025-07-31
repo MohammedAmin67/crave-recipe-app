@@ -1,12 +1,29 @@
-# React + Vite
+# CraveCraft Recipe App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that generates delicious recipe ideas based on ingredients you have on hand.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add ingredients you have available
+- Get recipe suggestions with just one click
+- Beautiful, responsive design with smooth animations
+- Easy-to-follow recipe instructions
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- HTML5
+- CSS3 with custom animations
+- JavaScript
+- Node.js
+- React
+
+## How to Use
+
+1. Enter ingredients you have in the input field
+2. Click "Add Ingredient" to add them to your list
+3. When you're ready, click "Get Recipe Ideas" 
+4. View your personalized recipe suggestion
+
+## Creator
+
+- [MohammedAmin67](https://github.com/MohammedAmin67)
