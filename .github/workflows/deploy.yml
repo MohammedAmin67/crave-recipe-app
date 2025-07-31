@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Update vite config for GitHub Pages
+        run: |
+          if grep -q "base:" "vite.config.js"; then
+            echo "Base path already configured"
+          else
+            sed -i "s/export default defineConfig({/export default defineConfig({\n  base: '\/crave-recipe-app\/',/" vite.config.js
+          fi
+        
+      - name: Build project
+        run: npm run build
+        
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean: true
